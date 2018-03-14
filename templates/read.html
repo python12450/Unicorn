@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NT-D</title>
+</head>
+<body>
+{% for i  in result %}
+    <p><a href="https://page.auctions.yahoo.co.jp/jp/auction/{{ i.auction_id }}" target="_blank">{{ i.name }}</a></p>
+{% endfor %}
+</body>
+</html>

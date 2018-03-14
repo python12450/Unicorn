@@ -1,0 +1,6 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.auctions.yahoo.co.jp	TRUE	/	FALSE	1518522842	sAuc	d=l5CR1zWrP4rAzRxzGylvYJu0yWJCSV7BRXphP6EROM_Hojvt_dV4RejVcSNhRQIlNHEX4Fbq.CEIAlIQB7ZIEwthM32QtxIrDOaFPg--&v=1
+.yahoo.co.jp	TRUE	/	FALSE	1579089241	B	4338td1d5mh6o&b=3&s=sb
