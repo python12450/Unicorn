@@ -1,7 +1,7 @@
 # coding=utf8
 from abc import ABCMeta, abstractmethod
+
 import requests
-import multiprocessing
 
 
 def mailginFunction(**kwargs):
@@ -17,15 +17,15 @@ def mailginFunction(**kwargs):
     data['subject'] = subj
     data['text'] = content
     url = "https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages".replace("YOUR_DOMAIN_NAME", domain)
-    r=requests.post(url, auth=("api", apikey), data=data)
+    r = requests.post(url, auth=("api", apikey), data=data)
     print r.content
 
 
 class SenderBase(object):
     __metaclass__ = ABCMeta
 
-    def __init__(self,apikey="",domain=""):
-        #self.__pool = multiprocessing.Pool()
+    def __init__(self, apikey="", domain=""):
+        # self.__pool = multiprocessing.Pool()
         self.content = ""
         self.__apikey = apikey
         self.__dommain = domain
@@ -33,19 +33,19 @@ class SenderBase(object):
         self.to = ""
         self.subj = ""
         self.isConfiged = False
+
     def send_sync(self):
         if not self.isConfiged:
             raise AttributeError("Please Config this Instant Fist!!")
         else:
-            data={}
+            data = {}
             data['from'] = 'Unicorn监视器邮件服务<' + self.sender + '>'
-            data['to']=self.to
-            data['subject']=self.subj
-            data["text"]=self.content
+            data['to'] = self.to
+            data['subject'] = self.subj
+            data["text"] = self.content
             url = "https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages".replace("YOUR_DOMAIN_NAME", self.__dommain)
             r = requests.post(url, auth=("api", self.__apikey), data=data)
             return r.content
-
 
     '''def send(self):
         if not self.isConfiged:
